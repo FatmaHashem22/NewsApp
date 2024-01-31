@@ -5,6 +5,7 @@ import android.util.Log
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.activity.ComponentActivity
+import androidx.annotation.Nullable
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.example.newsapp.R
