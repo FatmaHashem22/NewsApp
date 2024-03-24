@@ -124,7 +124,7 @@ class MainActivity : ComponentActivity() {
                 val newTab = tabLayout.newTab()
                 newTab.text = tab?.name
                 newTab.tag = tab?.id?: ""
-                tabLayout.addTab(newTab)
+                tabLayout.addTab(newTab,false)
             }
     }
 
