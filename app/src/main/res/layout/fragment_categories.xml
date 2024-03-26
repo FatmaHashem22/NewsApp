@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.theme.home.fragments.categories.CategoriesFragment">
+    tools:context=".ui.theme.home.fragments.categories.CategoriesFragment"
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/categories_title"
@@ -14,8 +15,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:textColor="@color/black"
-        android:padding="18dp"
-        android:textSize="26sp"
+        android:paddingHorizontal="18dp"
+        android:paddingBottom="6dp"
+        android:textSize="22sp"
         android:fontFamily="sans-serif-medium"/>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -26,6 +28,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         tools:listitem="@layout/item_left_category"
+        android:background="@color/white"
         app:spanCount="2"
         />
 

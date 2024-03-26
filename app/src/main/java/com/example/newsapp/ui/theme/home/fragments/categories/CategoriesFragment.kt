@@ -21,8 +21,7 @@ class CategoriesFragment : Fragment() {
         Category("health", "Health", R.drawable.health_image, R.color.pink, true),
         Category("business", "Business", R.drawable.bussines_image, R.color.brown, false),
         Category("technology", "Technology", R.drawable.environment_image, R.color.light_blue, true),
-        Category("science", "Science", R.drawable.science_image, R.color.yellow, false ),
-        Category("general", "General", R.drawable.science_image, R.color.red, true )
+        Category("science", "Science", R.drawable.science_image, R.color.yellow, false )
     )
 
 
@@ -42,8 +41,20 @@ class CategoriesFragment : Fragment() {
     fun initViews(view : View) {
         recyclerView = view.findViewById(R.id.categories_recycler_view)
         adapter = CategoriesAdapter(categories)
+        adapter.onCategoryClick = object : CategoriesAdapter.OnCategoryClick {
+            override fun onCategoryClick(category: Category, position: Int) {
+                onCategoryClick?.onCategoryClick(category)
+            }
+
+        }
         recyclerView.adapter = adapter
 
+    }
+
+    var onCategoryClick : OnCategoryClick? = null
+
+    interface OnCategoryClick {
+        fun onCategoryClick( category: Category)
     }
 
 

@@ -10,14 +10,17 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.newsapp.R
 import com.example.newsapp.model.Category
+import com.google.android.material.card.MaterialCardView
 
 class CategoriesAdapter(val items: List<Category>) : RecyclerView.Adapter<CategoriesAdapter.ViewHolder>() {
+
+
 
     class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
 
         val categoryTitle : TextView = itemView.findViewById(R.id.category_option)
         val categoryImage : ImageView = itemView.findViewById(R.id.category_image)
-        val categoryBg : View = itemView.findViewById(R.id.item_background)
+
 
     }
 
@@ -39,15 +42,24 @@ class CategoriesAdapter(val items: List<Category>) : RecyclerView.Adapter<Catego
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val materialCardView = holder.itemView as MaterialCardView
+
         val category = items.get(position)
+        materialCardView.setOnClickListener {
+            onCategoryClick?.onCategoryClick(category,position)
+        }
         holder.categoryImage.setImageResource(category.imageId)
         holder.categoryTitle.text = category.title
-        holder.categoryBg.backgroundTintList = ColorStateList.valueOf(category.colorId)
-
+        materialCardView.setBackgroundColor(materialCardView.context.getColor(category.colorId))
     }
 
     override fun getItemCount(): Int = items.size
 
+
+    var onCategoryClick : OnCategoryClick ? = null
+    interface OnCategoryClick {
+        fun onCategoryClick(category: Category, position: Int)
+    }
 
 
 }

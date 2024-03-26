@@ -29,4 +29,35 @@
     <style name="Theme.NewsApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.NewsApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="LeftCardViewBg" parent="@style/Widget.MaterialComponents.CardView">
+        
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlayForLeftCardView</item>
+        
+    </style>
+    
+    <style name="ShapeAppearanceOverlayForLeftCardView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">24dp</item>
+        <item name="cornerSizeTopLeft">24dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">24dp</item>
+
+    </style>
+
+
+    <style name="RightCardViewBg" parent="@style/Widget.MaterialComponents.CardView">
+
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlayForRightCardView</item>
+
+    </style>
+
+    <style name="ShapeAppearanceOverlayForRightCardView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">24dp</item>
+        <item name="cornerSizeTopLeft">24dp</item>
+        <item name="cornerSizeBottomRight">24dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+
+    </style>
 </resources>

@@ -13,7 +13,7 @@ class SplashActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.splash_activity)
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this@SplashActivity, MainActivity::class.java)
+            val intent = Intent(this@SplashActivity, HomeActivity::class.java)
             startActivity(intent)
         },2500)
     }
