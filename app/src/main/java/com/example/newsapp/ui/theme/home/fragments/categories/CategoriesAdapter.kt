@@ -50,7 +50,8 @@ class CategoriesAdapter(val items: List<Category>) : RecyclerView.Adapter<Catego
         }
         holder.categoryImage.setImageResource(category.imageId)
         holder.categoryTitle.text = category.title
-        materialCardView.setBackgroundColor(materialCardView.context.getColor(category.colorId))
+//        materialCardView.setBackgroundColor()
+        materialCardView.setCardBackgroundColor(materialCardView.context.getColor(category.colorId))
     }
 
     override fun getItemCount(): Int = items.size
